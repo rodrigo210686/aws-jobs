@@ -14,3 +14,7 @@ ps -o pid,user,%mem,command ax |sort -b -k3 -r
 3. Clear pagecache, dentries, and inodes.
 
 # sync; echo 3 > /proc/sys/vm/drop_caches 
+
+######### Swap on and off
+# swapoff -a && swapon -a
+
