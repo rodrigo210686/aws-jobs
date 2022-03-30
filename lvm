@@ -1,0 +1,339 @@
+https://www.tecmint.com/extend-and-reduce-lvms-in-linux/
+
+############################
+
+[root@ip-192-168-98-202 ~]# fdisk -l
+Disk /dev/nvme0n1: 16 GiB, 17179869184 bytes, 33554432 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 1760802E-28DF-44E2-B0E0-D1964F72A39E
+
+Device           Start      End  Sectors Size Type
+/dev/nvme0n1p1    4096 33554398 33550303  16G Linux filesystem
+/dev/nvme0n1p128  2048     4095     2048   1M BIOS boot
+
+Partition table entries are not in disk order.
+
+
+Disk /dev/nvme1n1: 450 GiB, 483183820800 bytes, 943718400 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/vg_prep_s4-lvofs: 450 GiB, 483179626496 bytes, 943710208 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/nvme2n1: 20 GiB, 21474836480 bytes, 41943040 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/vg_prep_s4_log-lvlog: 20 GiB, 21470642176 bytes, 41934848 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/nvme3n1: 300 GiB, 322122547200 bytes, 629145600 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+[root@ip-192-168-98-202 ~]# pvcreate ^C
+[root@ip-192-168-98-202 ~]# ^C
+[root@ip-192-168-98-202 ~]# ^C
+[root@ip-192-168-98-202 ~]#
+[root@ip-192-168-98-202 ~]# pvs
+  PV         VG             Fmt  Attr PSize    PFree
+  /dev/sdf   vg_prep_s4     lvm2 a--  <450.00g    0
+  /dev/sdg   vg_prep_s4_log lvm2 a--   <20.00g    0
+[root@ip-192-168-98-202 ~]# vgs
+  VG             #PV #LV #SN Attr   VSize    VFree
+  vg_prep_s4       1   1   0 wz--n- <450.00g    0
+  vg_prep_s4_log   1   1   0 wz--n-  <20.00g    0
+[root@ip-192-168-98-202 ~]# lvs
+  LV    VG             Attr       LSize    Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  lvofs vg_prep_s4     -wi-ao---- <450.00g
+  lvlog vg_prep_s4_log -wi-ao----  <20.00g
+[root@ip-192-168-98-202 ~]# vgdisplay
+  --- Volume group ---
+  VG Name               vg_prep_s4
+  System ID
+  Format                lvm2
+  Metadata Areas        1
+  Metadata Sequence No  4
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                1
+  Open LV               1
+  Max PV                0
+  Cur PV                1
+  Act PV                1
+  VG Size               <450.00 GiB
+  PE Size               4.00 MiB
+  Total PE              115199
+  Alloc PE / Size       115199 / <450.00 GiB
+  Free  PE / Size       0 / 0
+  VG UUID               Pl78ct-sktO-3QiM-IyDc-2NDJ-O4MB-b4Oa5Z
+
+  --- Volume group ---
+  VG Name               vg_prep_s4_log
+  System ID
+  Format                lvm2
+  Metadata Areas        1
+  Metadata Sequence No  2
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                1
+  Open LV               1
+  Max PV                0
+  Cur PV                1
+  Act PV                1
+  VG Size               <20.00 GiB
+  PE Size               4.00 MiB
+  Total PE              5119
+  Alloc PE / Size       5119 / <20.00 GiB
+  Free  PE / Size       0 / 0
+  VG UUID               ZmNYwb-ZyVj-ugIU-X5aE-Yi3A-O0wt-ujjzx7
+
+[root@ip-192-168-98-202 ~]#
+[root@ip-192-168-98-202 ~]# fdisk -l
+Disk /dev/nvme0n1: 16 GiB, 17179869184 bytes, 33554432 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 1760802E-28DF-44E2-B0E0-D1964F72A39E
+
+Device           Start      End  Sectors Size Type
+/dev/nvme0n1p1    4096 33554398 33550303  16G Linux filesystem
+/dev/nvme0n1p128  2048     4095     2048   1M BIOS boot
+
+Partition table entries are not in disk order.
+
+
+Disk /dev/nvme1n1: 450 GiB, 483183820800 bytes, 943718400 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/vg_prep_s4-lvofs: 450 GiB, 483179626496 bytes, 943710208 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/nvme2n1: 20 GiB, 21474836480 bytes, 41943040 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/vg_prep_s4_log-lvlog: 20 GiB, 21470642176 bytes, 41934848 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/nvme3n1: 300 GiB, 322122547200 bytes, 629145600 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+[root@ip-192-168-98-202 ~]# pvcreate /dev/nvme3n1
+  Physical volume "/dev/nvme3n1" successfully created.
+[root@ip-192-168-98-202 ~]# fdiks -l
+-bash: fdiks: command not found
+[root@ip-192-168-98-202 ~]# fdisk -l
+Disk /dev/nvme0n1: 16 GiB, 17179869184 bytes, 33554432 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 1760802E-28DF-44E2-B0E0-D1964F72A39E
+
+Device           Start      End  Sectors Size Type
+/dev/nvme0n1p1    4096 33554398 33550303  16G Linux filesystem
+/dev/nvme0n1p128  2048     4095     2048   1M BIOS boot
+
+Partition table entries are not in disk order.
+
+
+Disk /dev/nvme1n1: 450 GiB, 483183820800 bytes, 943718400 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/vg_prep_s4-lvofs: 450 GiB, 483179626496 bytes, 943710208 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/nvme2n1: 20 GiB, 21474836480 bytes, 41943040 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/vg_prep_s4_log-lvlog: 20 GiB, 21470642176 bytes, 41934848 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/nvme3n1: 300 GiB, 322122547200 bytes, 629145600 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+[root@ip-192-168-98-202 ~]#
+[root@ip-192-168-98-202 ~]# pvs
+  PV         VG             Fmt  Attr PSize    PFree
+  /dev/sdf   vg_prep_s4     lvm2 a--  <450.00g      0
+  /dev/sdg   vg_prep_s4_log lvm2 a--   <20.00g      0
+  /dev/sdh                  lvm2 ---   300.00g 300.00g
+[root@ip-192-168-98-202 ~]# vgs
+  VG             #PV #LV #SN Attr   VSize    VFree
+  vg_prep_s4       1   1   0 wz--n- <450.00g    0
+  vg_prep_s4_log   1   1   0 wz--n-  <20.00g    0
+[root@ip-192-168-98-202 ~]# lvs
+  LV    VG             Attr       LSize    Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  lvofs vg_prep_s4     -wi-ao---- <450.00g
+  lvlog vg_prep_s4_log -wi-ao----  <20.00g
+[root@ip-192-168-98-202 ~]# vgextend  /dev/sdf /dev/sdh
+  Volume group "sdf" not found
+  Cannot process volume group sdf
+[root@ip-192-168-98-202 ~]# vgextend vg_prep_s4 /dev/sdh
+  Volume group "vg_prep_s4" successfully extended
+[root@ip-192-168-98-202 ~]# pvs
+  PV         VG             Fmt  Attr PSize    PFree
+  /dev/sdf   vg_prep_s4     lvm2 a--  <450.00g       0
+  /dev/sdg   vg_prep_s4_log lvm2 a--   <20.00g       0
+  /dev/sdh   vg_prep_s4     lvm2 a--  <300.00g <300.00g
+[root@ip-192-168-98-202 ~]# vgs
+  VG             #PV #LV #SN Attr   VSize   VFree
+  vg_prep_s4       2   1   0 wz--n- 749.99g <300.00g
+  vg_prep_s4_log   1   1   0 wz--n- <20.00g       0
+[root@ip-192-168-98-202 ~]# pvscan
+  PV /dev/sdf   VG vg_prep_s4       lvm2 [<450.00 GiB / 0    free]
+  PV /dev/sdh   VG vg_prep_s4       lvm2 [<300.00 GiB / <300.00 GiB free]
+  PV /dev/sdg   VG vg_prep_s4_log   lvm2 [<20.00 GiB / 0    free]
+  Total: 3 [<769.99 GiB] / in use: 3 [<769.99 GiB] / in no VG: 0 [0   ]
+[root@ip-192-168-98-202 ~]# lvextend -l +100%FREE ^C
+[root@ip-192-168-98-202 ~]# ^C
+[root@ip-192-168-98-202 ~]# vgdisplay
+  --- Volume group ---
+  VG Name               vg_prep_s4
+  System ID
+  Format                lvm2
+  Metadata Areas        2
+  Metadata Sequence No  6
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                1
+  Open LV               1
+  Max PV                0
+  Cur PV                2
+  Act PV                2
+  VG Size               749.99 GiB
+  PE Size               4.00 MiB
+  Total PE              191998
+  Alloc PE / Size       115199 / <450.00 GiB
+  Free  PE / Size       76799 / <300.00 GiB
+  VG UUID               Pl78ct-sktO-3QiM-IyDc-2NDJ-O4MB-b4Oa5Z
+
+  --- Volume group ---
+  VG Name               vg_prep_s4_log
+  System ID
+  Format                lvm2
+  Metadata Areas        1
+  Metadata Sequence No  2
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                1
+  Open LV               1
+  Max PV                0
+  Cur PV                1
+  Act PV                1
+  VG Size               <20.00 GiB
+  PE Size               4.00 MiB
+  Total PE              5119
+  Alloc PE / Size       5119 / <20.00 GiB
+  Free  PE / Size       0 / 0
+  VG UUID               ZmNYwb-ZyVj-ugIU-X5aE-Yi3A-O0wt-ujjzx7
+
+[root@ip-192-168-98-202 ~]# lvdisplay
+  --- Logical volume ---
+  LV Path                /dev/vg_prep_s4/lvofs
+  LV Name                lvofs
+  VG Name                vg_prep_s4
+  LV UUID                rjVLOR-NMnQ-uxIf-GRqB-OCY3-E7hJ-4xdiEA
+  LV Write Access        read/write
+  LV Creation host, time ip-192-168-98-198, 2016-03-31 10:50:41 +0000
+  LV Status              available
+  # open                 1
+  LV Size                <450.00 GiB
+  Current LE             115199
+  Segments               1
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     256
+  Block device           253:0
+
+  --- Logical volume ---
+  LV Path                /dev/vg_prep_s4_log/lvlog
+  LV Name                lvlog
+  VG Name                vg_prep_s4_log
+  LV UUID                dZ3uTA-EmGp-a2Vv-dmvi-EESK-VyOg-YQeXfh
+  LV Write Access        read/write
+  LV Creation host, time ip-192-168-98-198, 2017-12-19 07:22:32 +0000
+  LV Status              available
+  # open                 1
+  LV Size                <20.00 GiB
+  Current LE             5119
+  Segments               1
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     256
+  Block device           253:1
+
+[root@ip-192-168-98-202 ~]# lvextend -l +100%FREE /dev/vg_prep_s4/lvofs
+  Size of logical volume vg_prep_s4/lvofs changed from <450.00 GiB (115199 extents) to 749.99 GiB (191998 extents).
+  Logical volume vg_prep_s4/lvofs successfully resized.
+[root@ip-192-168-98-202 ~]# df -h
+Filesystem                        Size  Used Avail Use% Mounted on
+devtmpfs                          3.9G     0  3.9G   0% /dev
+tmpfs                             3.9G     0  3.9G   0% /dev/shm
+tmpfs                             3.9G  532K  3.9G   1% /run
+tmpfs                             3.9G     0  3.9G   0% /sys/fs/cgroup
+/dev/nvme0n1p1                     16G  4.0G   13G  25% /
+/dev/mapper/vg_prep_s4-lvofs      443G  372G   50G  89% /var/lib/ofs-s4
+/dev/mapper/vg_prep_s4_log-lvlog   20G  5.9G   13G  32% /app-logs
+tmpfs                             790M     0  790M   0% /run/user/7040
+[root@ip-192-168-98-202 ~]# resize2fs /dev/vg_prep_s4/lvofs
+resize2fs 1.42.9 (28-Dec-2013)
+Filesystem at /dev/vg_prep_s4/lvofs is mounted on /var/lib/ofs-s4; on-line resizing required
+old_desc_blocks = 29, new_desc_blocks = 47
+The filesystem on /dev/vg_prep_s4/lvofs is now 196605952 blocks long.
+
+[root@ip-192-168-98-202 ~]# df -h
+Filesystem                        Size  Used Avail Use% Mounted on
+devtmpfs                          3.9G     0  3.9G   0% /dev
+tmpfs                             3.9G     0  3.9G   0% /dev/shm
+tmpfs                             3.9G  532K  3.9G   1% /run
+tmpfs                             3.9G     0  3.9G   0% /sys/fs/cgroup
+/dev/nvme0n1p1                     16G  4.0G   13G  25% /
+/dev/mapper/vg_prep_s4-lvofs      739G  372G  333G  53% /var/lib/ofs-s4
+/dev/mapper/vg_prep_s4_log-lvlog   20G  5.9G   13G  32% /app-logs
+tmpfs                             790M     0  790M   0% /run/user/7040
