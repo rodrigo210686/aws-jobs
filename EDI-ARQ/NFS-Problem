@@ -1,0 +1,10 @@
+### Problema:
+## O diretório NFS não monta no servidor SFTP
+# AWS Account: #172447031387 
+
+##  Solução
+
+fusermount -u /mnt/gseb-ediarchiving-s3fs
+
+mount -a
+
