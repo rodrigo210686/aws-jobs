@@ -1,0 +1,6 @@
+##### DCP-PREPRODUCTION,] AWS/AutoScaling - Metric preprod_semantic-camanager-GroupInServiceCapacity was less than or equal to the 
+
+This is the autoscaling behavior. The environment start everyday at 5:00 am and stop at 19pm.
+AutoScaling group is: preprod_semantic-spacy
+
+###
