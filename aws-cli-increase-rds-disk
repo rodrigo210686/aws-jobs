@@ -1,0 +1,4 @@
+### Quando o disco da instância está como storage-full apresenta erro para aumentar disco e é necessário realizar através de cli
+
+aws rds modify-db-instance --db-instance-identifier (nome-da-instancia) --allocated-storage (valor em GB) --apply-immediately
+aws rds modify-db-instance --db-instance-identifier htst-sebdcp --allocated-storage 10 --apply-immediately
