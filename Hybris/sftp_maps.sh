@@ -8,7 +8,7 @@ mount --bind /efs/interfaces /home/sftphybris/interfaces
 
 ######## Diretórios Hybris PROD
 
-´´´shell
+
 root@ip-192-168-152-58 interfaces]# df -h
 Filesystem                                                       Size  Used Avail Use% Mounted on
 devtmpfs                                                         961M     0  961M   0% /dev
@@ -26,4 +26,4 @@ tmpfs                                                            196M     0  196
 tmpfs                                                            196M     0  196M   0% /run/user/0
 fs-c1d8d609.efs.eu-west-1.amazonaws.com:/interfaces              8.0E  874G  8.0E   1% /home/sftphybris/interfaces
 
-´´´
+
