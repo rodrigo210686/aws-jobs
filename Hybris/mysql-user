@@ -1,0 +1,6 @@
+ALTER USER 'hybris'@'localhost' IDENTIFIED BY 'New-Password-Here';
+FLUSH PRIVILEGES;
+
+
+https://github.com/groupeseb/InfraIT-AWS-Hybris/blob/develop/jenkins/hybris-infrastructure/envparameters/rollout.sh
+https://github.com/groupeseb/InfraIT-AWS-Hybris/blob/develop/configuration/hybris/ROLLOUT/local.properties
