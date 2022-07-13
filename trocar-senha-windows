@@ -1,0 +1,3 @@
+$Password = Read-Host "Enter password" -AsSecureString
+$UserAccount = Get-LocalUser -Name "inetumadmin"
+$UserAccount | Set-LocalUser -Password $Password
