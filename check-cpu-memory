@@ -1,3 +1,6 @@
+#### Check cou
+ps -o pid,user,%cpu,command ax |sort -b -k3 -r
+
 #### Check memory
 ps -o pid,user,%mem,command ax |sort -b -k3 -r
 
