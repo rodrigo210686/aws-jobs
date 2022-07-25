@@ -28,3 +28,8 @@ $len = 0
 gci -recurse -force $_.fullname -ErrorAction SilentlyContinue | % { $len += $_.length }
 $_.fullname, '{0:N2} GB' -f ($len / 1Gb)
 }
+
+
+#### listar tamanho de arquivos de uma pasta
+
+Get-ChildItem C:\Windows\System32\winevt\Logs -recurse | Select-Object Name, @{Name="MegaBytes";Expression={"{0:F2}" -f ($_.length/1MB)}}
