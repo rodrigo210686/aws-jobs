@@ -1,7 +1,0 @@
-#### serviços
-get-service * 
-or
-get-service -diplayname "telnet" | Stop-service
-
-# parando serviço
-stop-service -Name "sensu-client"
