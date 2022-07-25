@@ -1,0 +1,1 @@
+PS C:\> Compress-Archive .\sensu-client.7.out.log .\sensu-client.7.out.log.zip
