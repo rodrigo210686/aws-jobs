@@ -7,3 +7,5 @@ netsh advfirewall show all state
 ## Desabilitar firewall
 netsh advfirewall set allprofiles state off
 
+## Adicionar porta
+netsh advfirewall firewall add rule name="TCP Port 3389" dir=in action=allow protocol=TCP localport=3389
