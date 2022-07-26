@@ -1,0 +1,9 @@
+### Net stat
+netstat -an |find /i "3389"
+
+### Checar firewall 
+netsh advfirewall show all state
+
+## Desabilitar firewall
+netsh advfirewall set allprofiles state off
+
