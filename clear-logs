@@ -1,0 +1,4 @@
+### Journal
+https://unix.stackexchange.com/questions/139513/how-to-clear-journalctl
+
+journalctl --vacuum-size=500M
