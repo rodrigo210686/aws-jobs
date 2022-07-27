@@ -1,4 +1,4 @@
-ALTER USER 'hybris'@'localhost' IDENTIFIED BY 'New-Password-Here';
+ALTER USER 'hybris'@'%' IDENTIFIED BY 'YhaG6HT8OpTaaG';
 FLUSH PRIVILEGES;
 
 
