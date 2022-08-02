@@ -1,0 +1,19 @@
+Allow-IP-SG-SFTP-perf
+
+Hello
+
+can you please update all SFTP Security groups of recettes (recette, recette2, patch,...)
+
+by adding 193.27.69.211 (SQLI Lyon) to use port 22
+
+exemple: sg-084eebfbd799302fc - SG-Hybris-sftpserver-RECETTE
+
+
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 193.27.69.211/32
+          Description : SQLI Lyon  
+          
+ 
+ cloudformation/hybris/recette4/security.yml
