@@ -1,0 +1,31 @@
+########### RECETTE 4 solução de Problema RDS
+
+1 -  Comente a linha 
+#      DBInstanceIdentifier: !Sub db-${Project}-${Env}-1
+
+2 - Altere o valor
+	  
+	  Engine: aurora
+      
+	  Para
+	  
+	  Engine: aurora-mysql
+	  
+3 - Jenkis infrajob
+
+Após isso irá perceber que uma nova instancia com o nome aleatorio, exemplo (hrcey5qxauc27a), será criada no RDS como reader.
+Em seguida ela se tornará (writer) e deletará a instancia antiga
+
+
+5 - Descomente a linha
+DBInstanceIdentifier: !Sub db-${Project}-${Env}-1
+
+6 - Rode o jenkis job novamente
+Ele irá criar a instancia com o nome correto e irá deletar a de nome aleatório.
+
+## Conclusão
+Para funcionar teve que mudar a engine da parte de RDSDBInstance1.
+
+Motivo desconhecido pois funciona em todos outros ambientes.
+
+
