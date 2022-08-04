@@ -1,0 +1,10 @@
+#### All records from a specifc date
+
+aws s3api list-objects-v2 --bucket "bucket-name" --prefix "record-prefix" --query "Contents[?contains(LastModified, '2019-07-15')].{key: Key, date: LastModified}"
+
+Example:
+aws s3api list-objects-v2 --bucket "seb-sysops-hybris-production-eu-west-1" --prefix "majpropertieslog" --query "Contents[?contains(LastModified, '2022-08-04')].{key: Key, date: LastModified}"
+
+
+
+https://gist.github.com/holmberd/a714040e1ad70c4cfbd6e8743130cca2
