@@ -39,6 +39,10 @@ Get-ChildItem C:\Windows\System32\winevt\Logs -recurse | Select-Object Name, @{N
 dism.exe /online /cleanup-image /scanhealth
 dism.exe /online /cleanup-image /restorehealth
 
+dism.exe /online /cleanup-image /SPSuperseded
+
+
+
 #### Clean disk
 
 cd c:\windows\system32\
