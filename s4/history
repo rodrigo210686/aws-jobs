@@ -1,0 +1,65 @@
+ #### Server I-BD35A237
+ 
+ /etc/init.d/tomcat7 status
+ 1930  /etc/init.d/nginx status
+ 1931  ping prodv2.s4.groupe-seb.co
+ 1932  ping prodv2.s4.groupe
+ 1933  ping prodv2.s4.groupe-seb.com
+ 1934  journalctl -xe
+ 1935  journalctl -f
+ 1936  cat /var/log/tomcat7/
+ 1937  cat /var/log/syslog
+ 1938  locate access.log
+ 1939  cat /app-logs/nginx/access.log
+ 1940  cat /app-logs/nginx/prod.s4.openfoodsystem.com.access.log
+ 1941  tail-f  /app-logs/nginx/prod.s4.openfoodsystem.com.access.log
+ 1942  tail -f  /app-logs/nginx/prod.s4.openfoodsystem.com.access.log
+ 1943  locate error.log
+ 1944  cat /app-logs/nginx/error.log
+ 1945  cat /app-logs/nginx/prod.s4.openfoodsystem.com.com.error.log
+ 1946  tail -f /app-logs/nginx/prod.s4.openfoodsystem.com.com.error.log
+ 1947  locate nginx.conf
+ 1948  cd /etc/nginx/nginx.conf
+ 1949  cat /etc/nginx/nginx.conf
+ 1950  cat /etc/nginx/conf.d/*.conf
+ 1951  cat /etc/nginx/sites-enabled/*
+ 1952  cd /etc/nginx/sites-enabled/
+ 1953  ll
+ 1954  ping http://prod.s4.groupe-seb.com/
+ 1955  ping prod.s4.groupe-seb.com/
+ 1956  locaet resolv.conf
+ 1957  locaet resolev.conf
+ 1958  locaet resolve.conf
+ 1959  cd /etc/resolvconf/
+ 1960  ll
+ 1961  cd resolv.conf.d/
+ 1962  ll
+ 1963  locate resolv.conf
+ 1964  cat /etc/resolvconf/resolv.conf.d/base
+ 1965  cat /etc/resolvconf/resolv.conf.d/head
+ 1966  history |grep prodv2
+ 1967  hostname
+ 1968  nslookup prodv2.s4.groupe-seb.com
+ 1969  nslookup prod.s4.groupe-seb.com
+ 1970  /etc/init.d/tomcat7 status
+ 1971  more /app-logs/tomcat7/catalina.out
+ 1972  tail -n 10000000 /app-logs/tomcat7/catalina.out
+ 1973  tail -n 100000000 /app-logs/tomcat7/catalina.out
+ 1974  tail -n 1000000000 /app-logs/tomcat7/catalina.out
+ 1975  df -k
+ 1976  top
+ 1977  cat /etc/nginx/conf.d/vhost_autogen.conf
+ 1978  history
+ 1979  ping prodv2.s4.groupe-seb.com
+ 1980  hostname
+ 1981  history | grep tomcat
+ 1982  /etc/init.d/tomcat7 status
+ 1983  ping prodv2.s4.groupe-seb.com
+ 1984  traceroute prod-s4-elb-1944508141.eu-west-1.elb.amazonaws.com
+ 1985  ping prodv2.s4.groupe-seb.com
+ 1986  nslookup 34.251.42.172
+ 1987  ping prodv2.s4.groupe-seb.com
+ 1988  cat /etc/zabbix/zabbix_agentd.d/userparameter_check_url.conf
+ 1989  cat /etc/zabbix/customscripts/check_url.py
+ 1990  exit
+ 1991  history
