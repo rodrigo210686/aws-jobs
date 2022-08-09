@@ -1,3 +1,6 @@
+##### Listar buckets normalmente
+aws s3api list-buckets --query "Buckets[].Name"
+
 #### All records from a specifc date
 
 aws s3api list-objects-v2 --bucket "bucket-name" --prefix "record-prefix" --query "Contents[?contains(LastModified, '2019-07-15')].{key: Key, date: LastModified}"
