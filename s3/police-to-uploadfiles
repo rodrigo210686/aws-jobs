@@ -1,0 +1,21 @@
+### Para funcionar basta criar uma policie e associar a role existente da Ec2. caso não tenha criar uma role e associar a instancia.
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "s3:PutObject",
+                "s3:PutObjectAcl",
+                "s3:GetObject",
+                "s3:GetObjectAcl",
+                "s3:AbortMultipartUpload"
+            ],
+            "Resource": [
+                "arn:aws:s3:::s4-log-inetum",
+                "arn:aws:s3:::s4-log-inetum/*"
+            ],
+            "Effect": "Allow"
+        }
+    ]
+}
