@@ -27,3 +27,24 @@ aws s3api list-objects-v2 --bucket "bucket-name" --prefix "record-prefix" --quer
 
 
 https://gist.github.com/holmberd/a714040e1ad70c4cfbd6e8743130cca2
+
+########## Script para copiar pastas de especifica data. Precisa aprimorar não está trazendo as pastas.
+#!/bin/bash
+
+SOURCE_BUCKET="seb-sysops-hybris-production-eu-west-1"
+DESTINATION_BUCKET="."
+BUCKET_PATH="s3://seb-sysops-hybris-production-eu-west-1"
+PREFIX="majpropertieslog"
+
+content=$(aws s3api list-objects-v2 --bucket $SOURCE_BUCKET --prefix $PREFIX --query 'Contents[?(LastModified >=`2022-08-17`)].{key: Key, date: LastModified}' |awk -F\" '/majproperties/{print $4}')
+
+#aws s3api list-objects-v2 --bucket $SOURCE_BUCKET --prefix $PREFIX --query 'Contents[?(LastModified >=`2022-08-17`)].{key: Key, date: LastModified}' |awk -F\" '/majproperties/{print $4}' > content.txt
+
+
+for file in $content;
+do
+    aws s3 cp $BUCKET_PATH/$file . --recursive
+done
+##################
+
+
