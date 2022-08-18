@@ -1,3 +1,7 @@
+#### COPIAR
+
+aws s3 cp s3://hybrisapplog/prod/threaddumps/Hybris-storefront-PRODUCTION_i-019fb2e9d66f2a01b_20201129121402_td_2020-11-29_12h14m01_4436.txt.gz .
+
 ##### Listar buckets normalmente
 aws s3api list-buckets --query "Buckets[].Name"
 
