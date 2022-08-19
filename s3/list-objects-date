@@ -29,6 +29,7 @@ aws s3api list-objects-v2 --bucket "bucket-name" --prefix "record-prefix" --quer
 https://gist.github.com/holmberd/a714040e1ad70c4cfbd6e8743130cca2
 
 ########## Script para copiar pastas de especifica data. Precisa aprimorar não está trazendo as pastas.
+https://stackoverflow.com/questions/69318367/amazon-s3-copy-files-after-date-and-with-regex
 #!/bin/bash
 
 SOURCE_BUCKET="seb-sysops-hybris-production-eu-west-1"
