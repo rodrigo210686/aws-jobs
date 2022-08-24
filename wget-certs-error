@@ -1,0 +1,7 @@
+## Quando estiver com problemas de repositório recebendo erros utilize o comando abaixo.
+Exemplo de erro: ERROR: cannot verify certificate, issued by ‘/C=US/O=Let's Encrypt/CN=R3’:
+
+ 
+yum install -y ca-certificates
+ 
+ 
