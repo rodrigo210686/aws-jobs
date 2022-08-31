@@ -1,0 +1,17 @@
+## Describe pods in node
+kubectl get pods --all-namespaces -o wide --field-selector spec.nodeName=<node>
+
+
+### Comandos usados
+ /usr/local/bin/kubectl describe pod migrator-deployment-6fbff4976b --namespace=communication
+ 
+ /usr/local/bin/kubectl get pods --namespace=communication -o wide
+ 
+ /usr/local/bin/kubectl logs cl-eck-beat-filebeat-6wjkj --namespace=operations
+ 
+ ### get deployment
+ 
+ /usr/local/bin/kubectl get deployments.apps -n communication
+ 
+ ### descrever um deployment
+ /usr/local/bin/kubectl describe deployment migrator-deployment -n communication
