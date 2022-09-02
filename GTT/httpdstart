@@ -1,0 +1,6 @@
+ /etc/init.d/httpd_byyourside  stop
+ /etc/init.d/httpd_byyourside  start
+ /etc/init.d/httpd_byyourside  stop
+ 
+ service httpd_cuisinecompanion start
+ service httpd_byyourside  start
