@@ -4,6 +4,11 @@ ps -o pid,user,%cpu,command ax |sort -b -k3 -r
 #### Check memory
 ps -o pid,user,%mem,command ax |sort -b -k3 -r
 
+
+### Check memory percentage free
+
+free | grep Mem | awk '{print $3/$2 * 100.0}'
+
 ############ Clear memory cache
 
 1. Clear PageCache only.
