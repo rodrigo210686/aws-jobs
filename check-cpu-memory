@@ -5,7 +5,7 @@ ps -o pid,user,%cpu,command ax |sort -b -k3 -r
 ps -o pid,user,%mem,command ax |sort -b -k3 -r
 
 
-### Check memory percentage free
+### Check memory percentage in use
 
 free | grep Mem | awk '{print $3/$2 * 100.0}'
 
