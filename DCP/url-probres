@@ -1,4 +1,4 @@
-
+https://delivery.inetum.com/confluence/display/SRBIG/APP+newman+GSEB+DCP#APPnewmanGSEBDCP-check_UserProfile_FromDCP_preprod
 
 [root@ip-10-160-9-166 ~]# history |grep env-aws-preprod.json
    43  newman run edifixio_collection.json --environment env-aws-preprod.json --globals globals.json --folder 'Probe 4 to 6' --timeout 15000 --ssl-client-cert dcp-preprod.2020.crt --ssl-client-key dcp-preprod.2020.key
