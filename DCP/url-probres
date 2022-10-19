@@ -1,0 +1,69 @@
+
+
+[root@ip-10-160-9-166 ~]# history |grep env-aws-preprod.json
+   43  newman run edifixio_collection.json --environment env-aws-preprod.json --globals globals.json --folder 'Probe 4 to 6' --timeout 15000 --ssl-client-cert dcp-preprod.2020.crt --ssl-client-key dcp-preprod.2020.key
+   48  newman run edifixio_collection.json --environment env-aws-preprod.json --globals globals.json --folder 'Probe 4 to 6' --timeout 15000 --ssl-client-cert dcp-preprod.2020.crt --ssl-client-key dcp-preprod.2020.key
+   50  newman run edifixio_collection.json --environment env-aws-preprod.json --globals globals.json --folder 'Probe 4 to 6' --timeout 15000 --ssl-client-cert dcp-preprod.2020.crt --ssl-client-key dcp-preprod.2020.key
+   75  newman run edifixio_collection.json --environment env-aws-preprod.json --globals globals.json --folder 'Probe 4 to 6' --timeout 15000 --ssl-client-cert dcp-preprod.2020.crt --ssl-client-key dcp-preprod.2020.key
+   98  newman run edifixio_collection.json --environment env-aws-preprod.json --globals globals.json --folder 'Probe 9 to 10' --timeout 15000 --ssl-client-cert dcp-preprod.2020.crt --ssl-client-key dcp-preprod.2020.key
+   99  newman run edifixio_collection.json --environment env-aws-preprod.json --globals globals.json --folder 'Probe 11' --timeout 15000 --ssl-client-cert dcp-preprod.2020.crt --ssl-client-key dcp-preprod.2020.key
+  101  newman run edifixio_collection.json --environment env-aws-preprod.json --globals globals.json --folder 'Probe 4 to 6' --timeout 15000 --ssl-client-cert dcp-preprod.2020.crt --ssl-client-key dcp-preprod.2020.key
+  124  newman run edifixio_collection.json --environment env-aws-preprod.json --globals globals.json --folder 'Probe 4 to 6' --timeout 15000 --ssl-client-cert dcp-preprod.2020.crt --ssl-client-key dcp-preprod.2020.key
+  125  newman run edifixio_collection.json --environment env-aws-preprod.json --globals globals.json --folder 'Probe 4 to 6' --timeout 15000 --ssl-client-cert dcp-preprod.2020.crt --ssl-client-key dcp-preprod.2020.key
+  167  newman run edifixio_collection.json --environment env-aws-preprod.json --globals globals.json --folder 'Probe 4 to 6' --timeout 15000 --ssl-client-cert dcp-preprod.2020.crt --ssl-client-key dcp-preprod.2020.key
+  185  newman run edifixio_collection.json --environment env-aws-preprod.json --globals globals.json --folder 'Probe 9 to 10' --timeout 15000 --ssl-client-cert dcp-preprod.2020.crt --ssl-client-key dcp-preprod.2020.key
+  189  newman run edifixio_collection.json --environment env-aws-preprod.json --globals globals.json --folder 'Probe 4 to 6' --timeout 15000 --ssl-client-cert dcp-preprod.2020.crt --ssl-client-key dcp-preprod.2020.key
+  603  newman run edifixio_collection.json --environment env-aws-preprod.json --globals globals.json --folder 'Probe 9 to 10' --timeout 15000 --ssl-client-cert dcp-preprod.2020.crt --ssl-client-key dcp-preprod.2020.key
+ 1001  history |grep env-aws-preprod.json
+[root@ip-10-160-9-166 ~]# !43
+newman run edifixio_collection.json --environment env-aws-preprod.json --globals globals.json --folder 'Probe 4 to 6' --timeout 15000 --ssl-client-cert dcp-preprod.2020.crt --ssl-client-key dcp-preprod.2020.key
+error: could not load environment
+  ENOENT: no such file or directory, open 'env-aws-preprod.json'
+
+[root@ip-10-160-9-166 ~]# find / -name edifixio_collection.json
+find: ‘/proc/22397’: No such file or directory
+/usr/lib/zabbix/externalscripts/newman/edifixio_collection.json
+You have new mail in /var/spool/mail/root
+[root@ip-10-160-9-166 ~]# cd /usr/lib/zabbix/externalscripts/newman/
+[root@ip-10-160-9-166 newman]# !43
+newman run edifixio_collection.json --environment env-aws-preprod.json --globals globals.json --folder 'Probe 4 to 6' --timeout 15000 --ssl-client-cert dcp-preprod.2020.crt --ssl-client-key dcp-preprod.2020.key
+newman
+
+Edifixio
+
+❏ Probe 4 to 6
+↳ Probe 4 - User Authentication
+  POST https://preprod.api.groupe-seb.com:443/common-api/login?market=GS_FR [200 OK, 1.68kB, 2s]
+  ✓  Search login 'edifixioprobe@edifixio.com' in the output
+  ✓  Waiting for status code 200
+
+↳ Probe 5 - Profile Read
+  GET https://preprod.api.groupe-seb.com:443/common-api/profiles/me [200 OK, 1.57kB, 246ms]
+  ✓  Search login 'edifixioprobe@edifixio.com' in the output
+  ✓  Waiting for status code 200
+
+↳ Probe 6 - User Update
+  PUT https://preprod.api.groupe-seb.com:443/common-api/profiles/PRO/3367118 [204 No Content, 988B, 8.1s]
+  ✓  Waiting for status code 204
+
+┌─────────────────────────┬───────────────────┬───────────────────┐
+│                         │          executed │            failed │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│              iterations │                 1 │                 0 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│                requests │                 3 │                 0 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│            test-scripts │                 3 │                 0 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│      prerequest-scripts │                 0 │                 0 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│              assertions │                 5 │                 0 │
+├─────────────────────────┴───────────────────┴───────────────────┤
+│ total run duration: 10.5s                                       │
+├─────────────────────────────────────────────────────────────────┤
+│ total data received: 1.02kB (approx)                            │
+├─────────────────────────────────────────────────────────────────┤
+│ average response time: 3.4s [min: 246ms, max: 8.1s, s.d.: 3.3s] │
+└─────────────────────────────────────────────────────────────────┘
+[root@ip-10-160-9-166 newman]# vim env-aws-preprod.json
+[root@ip-10-160-9-166 newman]# newman run edifixio_collection.json --environment env-aws-preprod.json --globals globals.json --folder 'Probe 4 to 6' --timeout 15000 --ssl-client-cert dcp-preprod.2020.crt --ssl-client-key dcp-preprod.2020.key
