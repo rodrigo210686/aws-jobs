@@ -1,0 +1,43 @@
+[root@ip-192-168-135-88 ~]# cat efs.sh
+## PROD
+# mount -t nfs 192.168.155.191:/ /efssource
+
+## RECETTE
+# mount -t nfs 192.168.139.206:/ /efstarget
+
+## RECETTE2
+# mount -t nfs 192.168.139.228:/ /efstarget
+
+## RECETTE3
+# mount -t nfs 192.168.139.199:/ /efstarget
+
+## RECETTE4
+# mount -t nfs 192.168.139.233:/ /efstarget
+
+## RECETTE5
+# mount -t nfs 192.168.139.37:/ /efstarget
+
+## TRAINING
+# mount -t nfs 192.168.139.205:/ /efstarget
+
+## PREPROD
+# mount -t nfs 192.168.147.116:/ /efstarget
+
+## SANDBOX
+# mount -t nfs 192.168.123.77:/ /efstarget
+
+## ROLLOUT
+# mount -t nfs 192.168.139.197:/ /efstarget
+
+## PATCH
+# mount -t nfs 192.168.139.207:/ /efstarget
+
+## PERFORMANCE
+# mount -t nfs 192.168.139.20:/ /efstarget
+
+## Command to refresh Media
+## First mount source and destination, then run the below command, unmount the EFS once the rsync is done
+
+#old command # nohup rsync -avpP --delete /efssource/media/* /efstarget/media/ &
+# nohup rsync -avpP --timeout=0  --delete  /efssource/media/* /efstarget/media/ &
+# umount /efssource /efstarget
