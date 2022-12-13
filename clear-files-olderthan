@@ -1,0 +1,6 @@
+find /var/lib/ofs-s4/application/xlsx -mtime +7 -name '*.xlsx' -exec rm -rf {} \;
+
+find /var/lib/ofs-s4/application/zip -mtime +7 -name '*.zip' -exec rm -rf {} \;
+
+
+find /path/to/directory/ -mtime +<number of days> -name '<file name>' -exec rm -rf {} \;
