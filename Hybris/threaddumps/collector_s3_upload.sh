@@ -17,8 +17,9 @@ exec 2>&1 # and also to console
 #export AWS_SECRET_ACCESS_KEY=$HEAPDUMP_UP_AWS_SECRET_ACCESS_KEY
 export AWS_DEFAULT_REGION=eu-west-1
 
-NOW=$(date +"%Y%m%d%H%M%S")
-expirationDate=$(date -d $(date +"%Y/%m/%"d)+" 30 days" +%Y/%m/%d)
+#NOW=$(date +"%Y%m%d%H%M%S")
+NOW=$(date +"%Y%m%d")
+expirationDate=$(date -d $(date +"%Y/%m/%"d)+" 15 days" +%Y/%m/%d)
 
 echo "$(timestamp): look for heap dumps to upload "
 
