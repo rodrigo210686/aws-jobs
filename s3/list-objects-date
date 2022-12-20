@@ -48,4 +48,7 @@ do
 done
 ##################
 
+########## List data with path prefix
+aws s3api list-objects-v2 --bucket "hybrisapplog" --prefix "prod/gclogs" --query "Contents[?contains(LastModified, '2022-11-25')].{key: Key, date: LastModified}"
+
 
