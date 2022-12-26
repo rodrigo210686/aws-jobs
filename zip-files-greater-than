@@ -1,0 +1,1 @@
+find /var/log/ofs/auth/* -size +500M -name "access.2*" -exec gzip {} \;
