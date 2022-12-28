@@ -4,3 +4,10 @@ find /var/lib/ofs-s4/application/zip -mtime +7 -name '*.zip' -exec rm -rf {} \;
 
 
 find /path/to/directory/ -mtime +<number of days> -name '<file name>' -exec rm -rf {} \;
+
+
+#### Delete files older than 20 days
+
+find /var/log/ofs/auth/* -mtime +20 -name "access.2*" -exec rm -f {} \;
+
+
