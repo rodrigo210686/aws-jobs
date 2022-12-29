@@ -50,6 +50,9 @@ cleanmgr.exe /d C: /autoclean
 
 
 ##### Ger memory usage
+To get memory usage for the top 10 processes on a remote computer using PowerShell, use the below command
+
+
 
  $CompName  = 'EC2AMAZ-1RVFUCQ'
  # Get Computer Object
