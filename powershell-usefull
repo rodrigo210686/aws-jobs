@@ -50,17 +50,15 @@ cleanmgr.exe /d C: /autoclean
 
 
 ##### Ger memory usage
-To get memory usage for the top 10 processes on a remote computer using PowerShell, use the below command
+Top 5 memory usage
 
 
-
- $CompName  = 'EC2AMAZ-1RVFUCQ'
  # Get Computer Object
- $CompObject =  Get-WmiObject -Class WIN32_OperatingSystem -ComputerName $CompName 
+ $CompObject =  Get-WmiObject -Class WIN32_OperatingSystem
  $Memory = ((($CompObject.TotalVisibleMemorySize - $CompObject.FreePhysicalMemory)*100)/ $CompObject.TotalVisibleMemorySize)
  
-  Write-Host "Memory usage in Percentage:" $Memory
+ Write-Host "Memory usage in Percentage:" $Memory
+        
  # Top 5 process Memory Usage (MB)
- $processMemoryUsage = Get-WmiObject WIN32_PROCESS -ComputerName $CompName  | Sort-Object -Property ws -Descending | Select-Object -first 5 processname, @{Name="Mem Usage(MB)";Expression={[math]::round($_.ws / 1mb)}}
+ $processMemoryUsage = Get-WmiObject WIN32_PROCESS | Sort-Object -Property ws -Descending | Select-Object -first 5 processname, @{Name="Mem Usage(MB)";Expression={[math]::round($_.ws / 1mb)}}
  $processMemoryUsage
-
