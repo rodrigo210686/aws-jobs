@@ -1,7 +1,6 @@
 #### Create a policy
 
-```py
-
+```json
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -12,7 +11,7 @@
                 "logs:CreateLogStream",
                 "logs:PutLogEvents"
             ],
-            "Resource": "arn:aws:logs:eu-west-1:ID-DA-SUA-CONTA:log-group:/aws/lambda/StartFrontofficeASG:*"
+            "Resource": "arn:aws:logs:eu-west-1:264713131802:log-group:/aws/lambda/startServer:*"
         },
         {
             "Sid": "VisualEditor1",
@@ -28,10 +27,11 @@
             "Sid": "VisualEditor2",
             "Effect": "Allow",
             "Action": "logs:CreateLogGroup",
-            "Resource": "arn:aws:logs:eu-west-1:ID-DA-SUA-CONTA:*"
+            "Resource": "arn:aws:logs:eu-west-1:264713131802:*"
         }
     ]
 }
+
 
 ```
 
