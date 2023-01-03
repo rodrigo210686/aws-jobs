@@ -144,12 +144,17 @@ def lambda_handler(event, context):
 ```
 
 #########
-#### Environmet variable
+#### Start Environmet variable
 DESIRED_CAPACITY </br>
 MIN_SIZE  </br>
 NAME  </br>
 STDNAMES  </br>
 TOPIC_ARN  </br>
+
+#### Stop Environmet variable
+
+NAME  </br>
+STDNAMES  </br>
 
 
 ########## Permissões
