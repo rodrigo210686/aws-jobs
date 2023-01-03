@@ -108,11 +108,12 @@ def lambda_handler(event, context):
 
 #########
 #### Environmet variable
-DESIRED_CAPACITY
-MIN_SIZE
-NAME
-STDNAMES
-TOPIC_ARN
+DESIRED_CAPACITY </br>
+MIN_SIZE  </br>
+NAME  </br>
+STDNAMES  </br>
+TOPIC_ARN  </br>
+
 
 ########## Permissões
 
