@@ -1,4 +1,4 @@
-#### Create a plicy
+#### Create a policy
 
 ```py
 
@@ -12,7 +12,7 @@
                 "logs:CreateLogStream",
                 "logs:PutLogEvents"
             ],
-            "Resource": "arn:aws:logs:eu-west-1:858824998001:log-group:/aws/lambda/StartFrontofficeASG:*"
+            "Resource": "arn:aws:logs:eu-west-1:ID-DA-SUA-CONTA:log-group:/aws/lambda/StartFrontofficeASG:*"
         },
         {
             "Sid": "VisualEditor1",
@@ -28,7 +28,7 @@
             "Sid": "VisualEditor2",
             "Effect": "Allow",
             "Action": "logs:CreateLogGroup",
-            "Resource": "arn:aws:logs:eu-west-1:858824998001:*"
+            "Resource": "arn:aws:logs:eu-west-1:ID-DA-SUA-CONTA:*"
         }
     ]
 }
