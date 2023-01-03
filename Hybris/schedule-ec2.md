@@ -1,3 +1,41 @@
+#### Create a plicy
+
+´´´py
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:eu-west-1:858824998001:log-group:/aws/lambda/StartFrontofficeASG:*"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "sns:*",
+                "ec2:*",
+                "autoscaling:*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor2",
+            "Effect": "Allow",
+            "Action": "logs:CreateLogGroup",
+            "Resource": "arn:aws:logs:eu-west-1:858824998001:*"
+        }
+    ]
+}
+
+´´´
+
+
 ## Lambda Config
 ![image](https://user-images.githubusercontent.com/91738714/210440049-0c19ebd2-e517-41f8-bcb1-de68f23c0ad0.png)
 
