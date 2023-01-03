@@ -1,6 +1,6 @@
 #### Create a plicy
 
-´´´py
+```py
 
 {
     "Version": "2012-10-17",
@@ -33,8 +33,7 @@
     ]
 }
 
-´´´
-
+```
 
 ## Lambda Config
 ![image](https://user-images.githubusercontent.com/91738714/210440049-0c19ebd2-e517-41f8-bcb1-de68f23c0ad0.png)
