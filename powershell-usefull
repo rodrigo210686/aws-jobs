@@ -1,11 +1,13 @@
 #### serviços
 get-service * 
 or
-get-service -diplayname "telnet" | Stop-service
+Get-Service -Name "AWSLiteAgent"
 
 # parando serviço
 stop-service -Name "sensu-client"
 
+# Iniciando
+Start-Service -Name "AWSLiteAgent"
 
 #### Discos
 # lsita discos por tamanho
