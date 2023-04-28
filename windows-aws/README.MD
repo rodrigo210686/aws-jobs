@@ -10,6 +10,8 @@ icacls.exe key.pem /inheritance:r
 
 ## Instalar cloudwatch agent
 
+Meu post de quando resolvi: https://github.com/aws/amazon-cloudwatch-agent/issues/471
+
 ```ps1
 https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/install-CloudWatch-Agent-on-EC2-Instance-fleet.html
 
