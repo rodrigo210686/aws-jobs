@@ -18,6 +18,10 @@ tefal.de
 tefal.es  
 tefal.fr  
 tefal.nl  
-tefal.be 
-rowenta.it 
+tefal.be
+
+
+rowenta.it
+
+
 brandsites.api.groupe-seb.com
