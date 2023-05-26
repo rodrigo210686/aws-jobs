@@ -25,6 +25,6 @@ server=/preprod.brandsites.api.groupe-seb.com/8.8.8.8
 search eu-west-1.compute.internal
 nameserver 127.0.0.1
 nameserver 10.160.9.2
-#nameserver 8.8.8.8
+
 
 ```
