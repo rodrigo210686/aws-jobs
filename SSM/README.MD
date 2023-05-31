@@ -1,3 +1,7 @@
 ### Instalando Cloud Wathc Agent
 https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/install-CloudWatch-Agent-on-EC2-Instance-fleet.html
 
+
+### Rodando scritp SH em várias instancias
+https://aws.amazon.com/pt/getting-started/hands-on/remotely-run-commands-ec2-instance-systems-manager/
+
