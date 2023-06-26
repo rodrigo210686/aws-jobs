@@ -8,3 +8,5 @@ https://aws.amazon.com/pt/getting-started/hands-on/remotely-run-commands-ec2-ins
 ### Instalando Cloud Watch Agent UBUNTU
 
 https://www.ques10.com/p/64686/install-cloudwatch-on-ubuntu-aws-ec2-instance-1/
+
+https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/install-CloudWatch-Agent-commandline-fleet.html
