@@ -9,6 +9,9 @@ stop-service -Name "sensu-client"
 # Iniciando
 Start-Service -Name "AWSLiteAgent"
 
+# Alterando o modo de inicialização
+Set-Service AWSLiteAgent -StartupType Disabled
+
 #### Discos
 # lsita discos por tamanho
 Get-CimInstance -ClassName Win32_LogicalDisk
