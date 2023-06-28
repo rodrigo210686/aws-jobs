@@ -1,0 +1,15 @@
+# Details about error pages
+
+https://www.lumar.io/blog/best-practice/how-to-find-404-errors-on-your-website-and-what-to-do-with-them/#:~:text=Finding%20404%20errors%20with%20Google%20Analytics&text=Simply%20head%20to%20%E2%80%9CBehavior%20%3E%20Site,title%20into%20the%20search%20box.
+
+1xx – Informational response
+2xx – Success
+3xx – Redirection
+4xx – Client errors
+5xx – Server errors
+
+
+
+# Curl command to check
+curl -kiL http://preprod.rowenta.es
+
