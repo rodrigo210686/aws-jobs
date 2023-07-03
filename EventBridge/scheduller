@@ -1,0 +1,21 @@
+## Create role
+
+https://docs.aws.amazon.com/scheduler/latest/UserGuide/setting-up.html
+
+
+### Cria um arquivo chamado Scheduler-Execution-Role.json com conteúdo abaixo.
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "scheduler.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+        }
+    ]
+}
+####
+## Executa o comando abaixo para criar a role
+aws iam create-role --role-name InetumSchedulerExecutionRole --assume-role-policy-document file://Scheduler-Execution-Role.json
