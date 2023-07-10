@@ -7,11 +7,13 @@ https://aws.amazon.com/pt/getting-started/hands-on/remotely-run-commands-ec2-ins
 
 ### Instalando Cloud Watch Agent UBUNTU
 
+A instancia ec2 precisa utilizar um AMI role que contenha a policy CloudWatchFullAccess
+
 https://www.ques10.com/p/64686/install-cloudwatch-on-ubuntu-aws-ec2-instance-1/
 
 https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/install-CloudWatch-Agent-commandline-fleet.html
 
-### History               
+### History das opções escolhidas              
 ```sh
 root@ip-192-168-77-183:~# sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
 ================================================================
