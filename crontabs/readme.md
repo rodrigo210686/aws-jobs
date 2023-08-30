@@ -7,4 +7,11 @@
 #Backup Job
 0 18 * * 5 /bin/sh /root/preprod_backup.sh > /var/log/solr8_backup/solr8-`/bin/date +\%Y\%m\%d`.log 2>&1![image](https://github.com/rbarbosa-inetum/comandos/assets/91738714/632591bb-93e7-4d02-a3ec-f618b854ff1d)
 
+## SFTP SERVERS
+
+@reboot sleep 300 && /root/mount.sh > /root/mount.log
+0 6 1 * * /root/sftp-clean.sh >/dev/null 2>&1
+
 ```
+
+
