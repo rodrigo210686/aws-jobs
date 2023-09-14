@@ -1,6 +1,0 @@
-ALTER USER 'hybris'@'%' IDENTIFIED BY 'YhaG6HT8OpTaaG';
-FLUSH PRIVILEGES;
-
-
-https://github.com/groupeseb/InfraIT-AWS-Hybris/blob/develop/jenkins/hybris-infrastructure/envparameters/rollout.sh
-https://github.com/groupeseb/InfraIT-AWS-Hybris/blob/develop/configuration/hybris/ROLLOUT/local.properties
