@@ -14,3 +14,19 @@ https://delivery.inetum.com/confluence/display/SRBIG/GSEB+Scenario+Web
 ## Trigger severity
 
 https://delivery.inetum.com/confluence/display/SRBIG/GSEB+Inventaire+Consigne
+
+
+
+## install npm e newman
+
+```sh
+curl -sL https://rpm.nodesource.com/setup_17.x | bash -
+
+yum install -y nodejs
+
+yum install gcc-c++ openssl-devel make
+
+yum install npm -y
+
+npm install -g newman
+```
