@@ -20,8 +20,15 @@ mkdir -p /efs-sync/efs-recette1/interfaces
 
 #### mount volume usando rclone
 
+```sh
 rclone mount -v --debug-fuse --allow-other --vfs-cache-mode full --vfs-cache-max-age 10s --dir-cache-time 10s --daemon rodrigo2186:recette/interfaces /efs-sync/efs-recette1/interfaces
 
+rclone mount -v --debug-fuse --allow-other --vfs-cache-mode full --vfs-cache-max-age 10s --dir-cache-time 10s --daemon recette1:recette2 /efs-sync/efs-recette1/interfaces
+```
 
 #### CRIA Container (optional) usando rclone
 rclone mkdir rodrigo2186:recette1
+
+
+### em casos de problema use o comando abaixo para desmontar o volume e monte novamente.
+fusermount -uz /efs-sync/efs-recette1/interfaces
