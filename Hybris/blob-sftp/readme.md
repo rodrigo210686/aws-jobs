@@ -23,5 +23,19 @@ mkdir -p /efs-sync/efs-recette1/interfaces
 rclone mount -v --debug-fuse --allow-other --vfs-cache-mode full --vfs-cache-max-age 10s --dir-cache-time 10s --daemon rodrigo2186:recette/interfaces /efs-sync/efs-recette1/interfaces
 
 
+### mount in boot
+#### CRONTAB
+@reboot /etc/init.d/blobs.sh
+
+```sh
+#!/bin/bash
+
+rclone mount -v --debug-fuse --allow-other --vfs-cache-mode full --vfs-cache-max-age 10s --dir-cache-time 10s --daemon recette1:recette1 /efs-sync/efs-recette1/interfaces
+rclone mount -v --debug-fuse --allow-other --vfs-cache-mode full --vfs-cache-max-age 10s --dir-cache-time 10s --daemon recette3:recette3 /efs-sync/efs-recette3/interfaces
+
+### in case mount error use comand below to umont the path and remount usin script above.
+#fusermount -uz /efs-sync/efs-recette1/interfaces
+```
 #### CRIA Container (optional) usando rclone
 rclone mkdir rodrigo2186:recette1
+
