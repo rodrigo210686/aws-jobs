@@ -29,4 +29,14 @@ yum install gcc-c++ openssl-devel make
 yum install npm -y
 
 npm install -g newman
+
+
+[root@ip-10-160-9-147 newman]# /usr/local/bin/newman run edifixio_collection.json --environment env-aws-prod.json  --globals globals.json --folder 'Probe 9 to 10' --timeout 15000 --ssl-client-cert dcp-prod.2020.crt --ssl-client-key dcp-p
+rod.2020.key > newman/check_Recipe_Read_From_Newman_prod.logs
+
+
+
+export PATH=$PATH:/usr/local/bin
+
+/etc/profile.d/sh.local
 ```
