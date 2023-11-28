@@ -40,3 +40,6 @@ export PATH=$PATH:/usr/local/bin
 
 /etc/profile.d/sh.local
 ```
+
+## Documentação do Newman e verificações criado pelo time de Monitoramento
+https://delivery.inetum.com/confluence/pages/viewpage.action?spaceKey=GFIBT&title=Information+about+check+newman+for+GSEB
